@@ -1,0 +1,166 @@
+.section-title{
+    margin: 2rem 0;
+    font-size: 38px;
+    direction: rtl;
+}
+.main-section{
+    height: 100vh;
+    padding-top: $header-height;
+    background-image: linear-gradient(90deg, rgba(40,159,166,1) 0%, rgba(255,255,255,0) 80%);
+    .main-section-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .main-section-wrapper{
+        display: flex;
+        height: 100%;
+        .section-left{
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            img{
+                max-height: 800px;
+                max-width: 520px;
+                min-width: 400px;
+            }
+        }
+        .section-right{
+            width: 50%;
+            padding: 4rem;
+            padding-top: 10rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            h1{
+                font-size: 60px;
+                color: $primary;
+                direction: rtl;
+            }
+            h2{
+                font-size: 40px;
+                font-weight: 400;
+                direction: rtl;
+            }
+            p{
+                max-width: 600px;
+                text-align: justify;
+                margin: 1.5rem 0;
+                direction: rtl;
+            }
+            button{
+                margin: 1rem 0;
+                padding: 8px 34px;
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+.section2{
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .section2-card{
+        max-width: 1000px;
+        width: 100%;
+        height: 400px;
+        border-radius: 65px;
+        background-color: rgb(from $primary r g b / 40%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 4rem;
+        text-align: justify;
+        p{
+            direction: rtl;
+            margin: 1rem 0;
+            span{
+                color: $accent;
+                font-weight: 500;
+            }
+        }
+        button{
+            margin: 1rem 0;
+            padding: 8px 34px;
+            font-size: 28px;
+        }
+    }
+}
+
+.section3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    .section3-cards{
+        width: 100%;
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .cards-bg{
+            width: 100%;
+            height: 50%;
+            background-color: rgb(from $primary r g b / 45%);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        .cards-wrapper{
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            .card{
+                max-width: 500px;
+                height: 200px;
+                border-radius: 25px;
+                margin: 1rem 2rem;
+                padding: 2rem;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                box-shadow: #0000005c 0px 4px 8px 0px;
+                justify-items: center;
+                grid-gap: 1rem;
+                &:nth-child(odd){
+                    grid-template-columns: 150px 1fr;
+                }
+                &:nth-child(even){
+                    grid-template-columns: 1fr 150px;
+                }
+                .card-img{
+                    width: 130px;
+                    height: 130px;
+                    border-radius: 25px;
+                    border: dashed $primary;
+                    border-width: 2px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        max-width: 70px;
+                        width: 100%;
+                    }
+                }
+                h4{
+                    font-size: 20px;
+                    direction: rtl;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "HEADER_NAV_WHO_ARE_WE": "من نحن ؟",
+    "HEADER_NAV_WHAT_DO_WE_OFFER": "ماذا نقدم ؟",
+    "HEADER_NAV_HOW_TO_USE": "كيفية الإستعمال ؟",
+    "HEADER_NAV_OUR_OFFERS": "عروضنا",
+    "HEADER_NAV_SIGNIN": "تسجيل الدخول",
+    "HEADER_NAV_SIGNUP": "سجل مجانا",
+    "HOME_SECTION1_TITLE": "فورماتيك أكاديمي",
+    "HOME_SECTION1_SUBTITLE": "بِناء مستقبلك الرقمي",
+    "HOME_SECTION1_DESCRIPTION": "مع أكاديمية فورماتيك، لديك الفرصة لتطوير مهارات قوية في مجال تكنولوجيا المعلومات من خلال دورات تفاعلية، مصممة وفقًا لوتيرتك الشخصية. تغطي برامجنا الأساسيات الضرورية لتحضيرك للتفوق في عالم رقمي دائم التغيير.",
+    "HOME_SECTION1_DESCRIPTION2": "انضم إلينا  وابنِ أسس نجاحك التكنولوجي !",
+    "HOME_SECTION1_BUTTON": "اشترك الآن",
+    "HOME_SECTION2_CARD_TITLE": "ما هي فورماتيك أكاديمي ؟",
+    "HOME_SECTION2_CARD_DESCRIPTION1": "فورماتيك أكاديمي تعتبر منصة تعليم عن بعد مخصصة لتوجيه طلاب المرحلتين الأساسية والثانوية. نقدم",
+    "HOME_SECTION2_CARD_DESCRIPTION2": "دروس دعم في مجال تكنولوجيا المعلومات",
+    "HOME_SECTION2_CARD_DESCRIPTION3": "بصيغة فيديوهات مسجلة لشرح جميع دروس المنهاج الدراسي، بالإضافة إلى حصص تفاعلية حية تُقدم تحت إشراف نخبة من أفضل المدرسين في تونس. تستطيع الاستفادة من هذه المنصة لتعزيز تعليمك وتحقيق نجاحك الأكاديمي.",
+    "HOME_SECTION2_CARD_BUTTON": "إبدأ الآن",
+    "HOME_SECTION3_TITLE": "ماذا نقدم ؟",
+    "HOME_SECTION3_CARD1_TEXT": "حصص تفاعلية مباشرة",
+    "HOME_SECTION3_CARD2_TEXT": "فيديوهات لشرح الدروس و تمارين مرفقة بالإصلاح",
+    "HOME_SECTION3_CARD3_TEXT": "تسجيلات الحصص المباشرة",
+    "HOME_SECTION3_CARD4_TEXT": "تمارين تفاعلية Quiz"
+}
