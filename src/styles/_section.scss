@@ -30,7 +30,7 @@
             align-items: flex-end;
             img{
                 max-height: 800px;
-                max-width: 520px;
+                max-width: 480px;
                 min-width: 400px;
             }
         }
@@ -171,6 +171,8 @@
     flex-direction: column;
     align-items: center;
     margin: 3rem 0;
+    padding-bottom: 4rem;
+    background: linear-gradient(0deg, rgba(40,159,166,0.2) 20%, rgba(255,255,255,0) 100%);
     .testimonials-wrapper{
         display: flex;
         flex-wrap: wrap;
@@ -187,6 +189,7 @@
             border-radius: 25px;
             border: 1px solid #D9D9D9;
             padding: 2rem;
+            background-color: white;
         }
         .stars{
             img{
@@ -236,6 +239,7 @@
             border-radius: 10px;
             width: 150px;
             box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 5px 0px;
+            background-color: white;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -287,11 +291,93 @@
                     content: "";
                     width: 190px;
                     height: 0px;
-                    border: 1px dashed lightgray;
+                    // border: 1px dashed #051C2C80;
                     position: absolute;
                     left: 130%;
+                    background-image: linear-gradient(to right, #051c2c9c 33%, rgba(255, 255, 255, 0) 0%);
+                    background-position: bottom;
+                    background-size: 10px 2px;
+                    background-repeat: repeat-x;
+                    height: 1.5px;
                 }
             }
+        }
+    }
+}
+
+.section5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem;
+    h2{
+        margin: 4rem 0;
+        span{
+            color: $accent;
+            font-weight: 500;
+        }
+    }
+    .qa-section{
+        width: 100%;
+        max-width: 1000px;
+        padding: 4rem 5rem;
+        border-radius: 30px;
+        background-color: #289FA673;
+    }
+
+    .collapsible {
+        background-color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        margin: 8px 0;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        h4{
+            font-size: 18px;
+        }
+        .plus-icon{
+            width: 30px;
+            height: 30px;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease-out;
+        }
+        &.active{
+            border-radius: 10px 10px 0 0;
+            h4{
+                color: $accent;
+            }
+            .plus-icon{
+                transform: rotate(45deg);
+            }
+        }
+        *{
+            pointer-events: none;
+        }
+    }
+      
+    .collapsible:hover {
+        background-color: rgb(244, 244, 244);
+    }
+    
+    .collapsible-content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: white;
+        margin-top: -10px;
+        border-radius: 0 0 10px 10px;
+        p{
+            margin-top: 0.5rem;
+            direction: rtl;
         }
     }
 }

@@ -32,6 +32,7 @@
             </div>
 
             <h2>{{ t('HOME_SECTION4_TITLE2_pt1') }} <span>{{ t('HOME_SECTION4_TITLE2_pt2') }}</span> {{ t('HOME_SECTION4_TITLE2_pt3') }}</h2>
+
             <div class="usage-wrapper">
                 <div class="usage-card">
                     <div class="card-number">
@@ -78,6 +79,8 @@
                     </div>
                 </div>
             </div>
+
+            <BButton pill class="accent-btn accent-btn-md">{{ t('HOME_SECTION1_BUTTON') }}</BButton>
 
         </div>
     </section>
