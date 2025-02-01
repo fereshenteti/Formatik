@@ -34,48 +34,56 @@
             <h2>{{ t('HOME_SECTION4_TITLE2_pt1') }} <span>{{ t('HOME_SECTION4_TITLE2_pt2') }}</span> {{ t('HOME_SECTION4_TITLE2_pt3') }}</h2>
 
             <div class="usage-wrapper">
-                <div class="usage-card">
+                <div class="usage-card-wrapper">
                     <div class="card-number">
                         <span>01</span>
                     </div>
-                    <div class="usage-icon">
-                        <img :src="usageIcon1"/>
-                    </div>
-                    <div class="usage-text">
-                        {{ t('HOME_SECTION4_USAGE_1') }}
+                    <div class="usage-card">
+                        <div class="usage-icon">
+                            <img :src="usageIcon1"/>
+                        </div>
+                        <div class="usage-text">
+                            {{ t('HOME_SECTION4_USAGE_1') }}
+                        </div>
                     </div>
                 </div>
-                <div class="usage-card">
+                <div class="usage-card-wrapper">
                     <div class="card-number">
                         <span>02</span>
                     </div>
-                    <div class="usage-icon">
-                        <img :src="usageIcon2"/>
-                    </div>
-                    <div class="usage-text">
-                        {{ t('HOME_SECTION4_USAGE_2') }}
+                    <div class="usage-card">
+                        <div class="usage-icon">
+                            <img :src="usageIcon2"/>
+                        </div>
+                        <div class="usage-text">
+                            {{ t('HOME_SECTION4_USAGE_2') }}
+                        </div>
                     </div>
                 </div>
-                <div class="usage-card">
+                <div class="usage-card-wrapper">
                     <div class="card-number">
                         <span>03</span>
                     </div>
-                    <div class="usage-icon">
-                        <img :src="usageIcon3"/>
-                    </div>
-                    <div class="usage-text">
-                        {{ t('HOME_SECTION4_USAGE_3') }}
+                    <div class="usage-card">
+                        <div class="usage-icon">
+                            <img :src="usageIcon3"/>
+                        </div>
+                        <div class="usage-text">
+                            {{ t('HOME_SECTION4_USAGE_3') }}
+                        </div>
                     </div>
                 </div>
-                <div class="usage-card">
+                <div class="usage-card-wrapper">
                     <div class="card-number">
                         <span>04</span>
                     </div>
-                    <div class="usage-icon">
-                        <img :src="usageIcon4"/>
-                    </div>
-                    <div class="usage-text">
-                        {{ t('HOME_SECTION4_USAGE_4') }}
+                    <div class="usage-card">
+                        <div class="usage-icon">
+                            <img :src="usageIcon4"/>
+                        </div>
+                        <div class="usage-text">
+                            {{ t('HOME_SECTION4_USAGE_4') }}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -136,6 +136,12 @@
                 box-shadow: #0000005c 0px 4px 8px 0px;
                 justify-items: center;
                 grid-gap: 1rem;
+                transform: scale(1);
+                transition: all 0.1s ease;
+                &:hover{
+                    transform: scale(1.05);
+                    box-shadow: #0000005c 0px 4px 14px 0px;
+                }
                 &:nth-child(odd){
                     grid-template-columns: 150px 1fr;
                 }
@@ -183,13 +189,17 @@
         .testimonial-card{
             width: 100%;
             flex: 1;
-            max-width: 500px;
+            max-width: 400px;
             min-width: 300px;
             direction: rtl;
             border-radius: 25px;
             border: 1px solid #D9D9D9;
             padding: 2rem;
             background-color: white;
+            &:nth-child(2){
+                transform: scale(1.07);
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 10px 0px;
+            }
         }
         .stars{
             img{
@@ -235,14 +245,22 @@
         flex-direction: row-reverse;
         gap: 8vw;
         margin: 7rem 1rem 3rem;
-        .usage-card{
-            border-radius: 10px;
-            width: 150px;
-            box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 5px 0px;
-            background-color: white;
+        .usage-card-wrapper{
             position: relative;
-            display: flex;
-            flex-direction: column;
+            .usage-card{
+                border-radius: 10px;
+                width: 150px;
+                box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 5px 0px;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                transform: scale(1);
+                transition: all 0.1s ease;
+                &:hover{
+                    transform: scale(1.1);
+                    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 14px 0px;
+                }
+            }
             .usage-icon{
                 padding: 1.3rem 1rem;
                 display: flex;
@@ -347,7 +365,7 @@
             width: 30px;
             height: 30px;
             transform: rotate(0deg);
-            transition: transform 0.3s ease-out;
+            transition: transform 0.1s ease-out;
         }
         &.active{
             border-radius: 10px 10px 0 0;

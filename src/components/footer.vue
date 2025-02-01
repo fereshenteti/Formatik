@@ -11,7 +11,7 @@
 <template>
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-social">
+            <div class="footer-list footer-social">
                 <h4>{{ t('FOOTER_GET_IN_TOUCH') }}</h4>
                 <div class="social-links">
                     <img :src="facebook"/>
@@ -22,16 +22,16 @@
             </div>
             <div class="footer-list ar">
                 <h4>{{ t('FOOTER_LINKS') }}</h4>
-                <p>{{ t('FOOTER_WHO_ARE_WE') }}</p>
-                <p>{{ t('FOOTER_WHAT_DO_WE_OFFER') }}</p>
-                <p>{{ t('FOOTER_HOW_TO_USE') }}</p>
-                <p>{{ t('FOOTER_OUR_OFFERS') }}</p>
+                <a href="#"><p>{{ t('FOOTER_WHO_ARE_WE') }}</p></a>
+                <a href="#"><p>{{ t('FOOTER_WHAT_DO_WE_OFFER') }}</p></a>
+                <a href="#"><p>{{ t('FOOTER_HOW_TO_USE') }}</p></a>
+                <a href="#"><p>{{ t('FOOTER_OUR_OFFERS') }}</p></a>
             </div>
             <div class="footer-list">
-                <h4>Legal</h4>
-                <p>Terms of use</p>
-                <p>Privacy policy</p>
-                <p>Legal notice</p>
+                <h4 class="legal-list-title">Legal</h4>
+                <a href="#"><p>Terms of use</p></a>
+                <a href="#"><p>Privacy policy</p></a>
+                <a href="#"><p>Legal notice</p></a>
             </div>
             <div class="footer-list ar">
                 <h4>{{ t('FOOTER_OUR_ADDRESS') }}</h4>
@@ -42,5 +42,6 @@
             </div>
             <div class="footer-logo"><img :src="logo"/></div>
         </div>
+        <div class="footer-copyright">{{ t('FOOTER_COPYRIGHT') }}</div>
     </footer>
 </template>
