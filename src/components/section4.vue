@@ -7,6 +7,8 @@
     const usageIcon2 = new URL('/src/assets/usage-icon2.svg', import.meta.url).href
     const usageIcon3 = new URL('/src/assets/usage-icon3.svg', import.meta.url).href
     const usageIcon4 = new URL('/src/assets/usage-icon4.svg', import.meta.url).href
+    const props = defineProps(['lang'])
+    const lang = props?.lang
 </script>
 
 <template>

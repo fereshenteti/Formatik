@@ -3,6 +3,8 @@
     const { t } = useI18n();
     const bg = new URL('/src/assets/bg-texture.svg', import.meta.url).href
     const avatar = new URL('/src/assets/avatar.png', import.meta.url).href
+    const props = defineProps(['lang'])
+    const lang = props?.lang
 </script>
 
 <template>

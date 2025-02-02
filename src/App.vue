@@ -1,4 +1,5 @@
 <script setup>
+  import { lang } from './App';
   import Header from './components/header.vue'
   import Section1 from './components/section1.vue'
   import Section2 from './components/section2.vue'
@@ -9,12 +10,12 @@
 </script>
 
 <template>
-  <Header/>
-  <Section1/>
-  <Section2/>
-  <Section3/>
-  <Section4/>
-  <Section5/>
-  <Footer/>
+  <Header :lang="lang"/>
+  <Section1 :lang="lang"/>
+  <Section2 :lang="lang"/>
+  <Section3 :lang="lang"/>
+  <Section4 :lang="lang"/>
+  <Section5 :lang="lang"/>
+  <Footer :lang="lang"/>
 </template>
 

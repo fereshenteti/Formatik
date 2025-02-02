@@ -2,6 +2,8 @@
     import { useI18n } from "vue-i18n";
     const { t } = useI18n();
     const logo = new URL('/src/assets/LogoFormatic.png', import.meta.url).href
+    const props = defineProps(['lang'])
+    const lang = props?.lang
 </script>
 
 <template>

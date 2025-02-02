@@ -6,6 +6,8 @@
     const instagram = new URL('/src/assets/instagram.svg', import.meta.url).href
     const youtube = new URL('/src/assets/youtube.svg', import.meta.url).href
     const tiktok = new URL('/src/assets/tiktok.svg', import.meta.url).href
+    const props = defineProps(['lang'])
+    const lang = props?.lang
 </script>
 
 <template>
@@ -14,10 +16,18 @@
             <div class="footer-list footer-social">
                 <h4>{{ t('FOOTER_GET_IN_TOUCH') }}</h4>
                 <div class="social-links">
-                    <img :src="facebook"/>
-                    <img :src="instagram"/>
-                    <img :src="youtube"/>
-                    <img :src="tiktok"/>
+                    <a href="https://www.facebook.com/profile.php?id=61551638202391" target="_blank">
+                        <img :src="facebook"/>
+                    </a>
+                    <a href="https://www.instagram.com/formatic.academy" target="_blank">
+                        <img :src="instagram"/>
+                    </a>
+                    <a href="https://www.youtube.com/@Formaticacademy" target="_blank">
+                        <img :src="youtube"/>
+                    </a>
+                    <a href="https://www.tiktok.com/@formatic.academy" target="_blank">
+                        <img :src="tiktok"/>
+                    </a>
                 </div>
             </div>
             <div class="footer-list ar">
@@ -27,12 +37,12 @@
                 <a href="#"><p>{{ t('FOOTER_HOW_TO_USE') }}</p></a>
                 <a href="#"><p>{{ t('FOOTER_OUR_OFFERS') }}</p></a>
             </div>
-            <div class="footer-list">
+            <!-- <div class="footer-list">
                 <h4 class="legal-list-title">Legal</h4>
                 <a href="#"><p>Terms of use</p></a>
                 <a href="#"><p>Privacy policy</p></a>
                 <a href="#"><p>Legal notice</p></a>
-            </div>
+            </div> -->
             <div class="footer-list ar">
                 <h4>{{ t('FOOTER_OUR_ADDRESS') }}</h4>
                 <p>{{ t('FOOTER_ADDRESS') }}</p>
