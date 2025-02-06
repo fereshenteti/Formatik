@@ -8,19 +8,19 @@
 </script>
 
 <template>
-    <section class="section main-section">
+    <section :class="`section main-section ${lang === 'ar' ? 'rtl' : ''}`">
         <div class="main-section-bg">
             <img :src="bg"/>
         </div>
         <div class="main-section-wrapper">
             <div class="section-left">
-                <img :src="avatar"/>
-            </div>
-            <div class="section-right">
                 <h1>{{ t('HOME_SECTION1_TITLE') }}</h1>
                 <h2>{{ t('HOME_SECTION1_SUBTITLE') }}</h2>
                 <p>{{ t('HOME_SECTION1_DESCRIPTION') }}<strong>{{ t('HOME_SECTION1_DESCRIPTION2') }}</strong></p>
                 <BButton pill class="accent-btn accent-btn-md">{{ t('HOME_SECTION1_BUTTON') }}</BButton>
+            </div>
+            <div class="section-right">
+                <img :src="avatar"/>
             </div>
         </div>
     </section>

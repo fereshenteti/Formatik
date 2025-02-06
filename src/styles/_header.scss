@@ -16,19 +16,20 @@
             flex: 1;
             display: flex;
             align-items: center;
+            justify-content: flex-end;
         }
         .nav-link{
             color: $secondary;
             border-radius: 30px;
-            margin: 0 1rem;
+            margin: 0 0.4rem;
             &:hover{
                 background-color: $bg-hover;
             }
         }
         .header-btn{
             min-width: 100px;
-            padding: 8px 1.2rem;
-            margin: 0 1rem;
+            padding: 8px 1rem;
+            margin: 0 0.6rem;
             border: none;
         }
         .header-right{
@@ -41,10 +42,11 @@
         }
 
         &.rtl{
-            .header-right{
-                order: 0;
-            }
             .header-left{
+                order: 0;
+                flex-direction: row-reverse;
+            }
+            .header-right{
                 order: 1;
             }
         }

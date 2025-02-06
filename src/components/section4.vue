@@ -15,7 +15,7 @@
     <section class="section">
         <div class="section4">
             <h2>{{ t('HOME_SECTION4_TITLE') }}</h2>
-            <div class="testimonials-wrapper">
+            <div :class="`testimonials-wrapper ${lang === 'ar' ? 'rtl' : ''}`">
                 <div v-for="i in 3" class="testimonial-card">
                     <div class="stars">
                         <img v-for="i in 5" :src="star"/>
@@ -35,7 +35,7 @@
 
             <h2>{{ t('HOME_SECTION4_TITLE2_pt1') }} <span>{{ t('HOME_SECTION4_TITLE2_pt2') }}</span> {{ t('HOME_SECTION4_TITLE2_pt3') }}</h2>
 
-            <div class="usage-wrapper">
+            <div :class="`usage-wrapper ${lang === 'ar' ? 'rtl' : ''}`">
                 <div class="usage-card-wrapper">
                     <div class="card-number">
                         <span>01</span>

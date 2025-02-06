@@ -24,7 +24,7 @@
         <div class="section5">
             <h2>{{ t('HOME_SECTION5_TITLE1') }} <span>{{ t('HOME_SECTION5_TITLE2') }}</span></h2>
 
-            <div class="qa-section">
+            <div :class="`qa-section ${lang === 'ar' ? 'rtl' : ''}`">
                 <button class="collapsible" @click="toggleCollapse($event)">
                     <h4>{{ t('HOME_SECTION5_QA_Q1') }}</h4>
                     <img class="plus-icon" :src="plusIcon"/>

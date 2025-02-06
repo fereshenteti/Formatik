@@ -12,7 +12,28 @@
 
 <template>
     <footer class="footer">
-        <div class="footer-container">
+        <div :class="`footer-container ${lang === 'ar' ? 'rtl' : ''}`">
+            <div class="footer-logo"><img :src="logo"/></div>
+            <div class="footer-list">
+                <h4>{{ t('FOOTER_OUR_ADDRESS') }}</h4>
+                <p>{{ t('FOOTER_ADDRESS') }}</p>
+                <h4>{{ t('FOOTER_CALL_US') }}</h4>
+                <p><span class="footer-label">{{ t('FOOTER_PHONE') }} : </span><span class="phone-number">56 09 50 68</span></p>
+                <p><span class="footer-label">{{ t('FOOTER_EMAIL') }} : </span>formaticacademy@gmail.com</p>
+            </div>
+            <!-- <div class="footer-list">
+                <h4 class="legal-list-title">Legal</h4>
+                <a href="#"><p>Terms of use</p></a>
+                <a href="#"><p>Privacy policy</p></a>
+                <a href="#"><p>Legal notice</p></a>
+            </div> -->
+            <div class="footer-list">
+                <h4>{{ t('FOOTER_LINKS') }}</h4>
+                <a href="#"><p>{{ t('FOOTER_WHO_ARE_WE') }}</p></a>
+                <a href="#"><p>{{ t('FOOTER_WHAT_DO_WE_OFFER') }}</p></a>
+                <a href="#"><p>{{ t('FOOTER_HOW_TO_USE') }}</p></a>
+                <a href="#"><p>{{ t('FOOTER_OUR_OFFERS') }}</p></a>
+            </div>
             <div class="footer-list footer-social">
                 <h4>{{ t('FOOTER_GET_IN_TOUCH') }}</h4>
                 <div class="social-links">
@@ -30,27 +51,6 @@
                     </a>
                 </div>
             </div>
-            <div class="footer-list ar">
-                <h4>{{ t('FOOTER_LINKS') }}</h4>
-                <a href="#"><p>{{ t('FOOTER_WHO_ARE_WE') }}</p></a>
-                <a href="#"><p>{{ t('FOOTER_WHAT_DO_WE_OFFER') }}</p></a>
-                <a href="#"><p>{{ t('FOOTER_HOW_TO_USE') }}</p></a>
-                <a href="#"><p>{{ t('FOOTER_OUR_OFFERS') }}</p></a>
-            </div>
-            <!-- <div class="footer-list">
-                <h4 class="legal-list-title">Legal</h4>
-                <a href="#"><p>Terms of use</p></a>
-                <a href="#"><p>Privacy policy</p></a>
-                <a href="#"><p>Legal notice</p></a>
-            </div> -->
-            <div class="footer-list ar">
-                <h4>{{ t('FOOTER_OUR_ADDRESS') }}</h4>
-                <p>{{ t('FOOTER_ADDRESS') }}</p>
-                <h4>{{ t('FOOTER_CALL_US') }}</h4>
-                <p><span class="footer-label">{{ t('FOOTER_PHONE') }} : </span><span class="phone-number">56 09 50 68</span></p>
-                <p><span class="footer-label">{{ t('FOOTER_EMAIL') }} : </span>formaticacademy@gmail.com</p>
-            </div>
-            <div class="footer-logo"><img :src="logo"/></div>
         </div>
         <div class="footer-copyright">{{ t('FOOTER_COPYRIGHT') }}</div>
     </footer>

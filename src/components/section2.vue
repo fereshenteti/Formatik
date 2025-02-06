@@ -7,7 +7,7 @@
 
 <template>
     <section class="section">
-        <div class="section2">
+        <div :class="`section2 ${lang === 'ar' ? 'rtl' : ''}`">
             <div class="section2-card">
                 <h2 class="section-title">{{ t('HOME_SECTION2_CARD_TITLE') }}</h2>
                 <p>{{ t('HOME_SECTION2_CARD_DESCRIPTION1') }} <span>{{ t('HOME_SECTION2_CARD_DESCRIPTION2') }}</span> {{ t('HOME_SECTION2_CARD_DESCRIPTION3') }}</p>

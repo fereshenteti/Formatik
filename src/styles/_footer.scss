@@ -10,9 +10,6 @@
         }
     }
     .footer-list{
-        &.ar{
-            direction: rtl;
-        }
         h4{
             margin: 1.4rem 0;
             font-weight: 500;
@@ -56,6 +53,12 @@
                     transform: scale(1.1);
                 }
             }
+        }
+    }
+    &.rtl{
+        flex-direction: row-reverse;
+        .footer-list{
+            direction: rtl;
         }
     }
 }
