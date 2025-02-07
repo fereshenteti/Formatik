@@ -1,5 +1,7 @@
 <script setup>
     import { useI18n } from "vue-i18n";
+    import { ROUTE_CONSTS } from '@/router.js';
+
     const { t } = useI18n();
     const logo = new URL('/src/assets/LogoFormatic.png', import.meta.url).href
     const facebook = new URL('/src/assets/facebook.svg', import.meta.url).href
@@ -29,10 +31,18 @@
             </div> -->
             <div class="footer-list footer-links">
                 <h4>{{ t('FOOTER_LINKS') }}</h4>
-                <a href="#"><p>{{ t('FOOTER_WHO_ARE_WE') }}</p></a>
-                <a href="#"><p>{{ t('FOOTER_WHAT_DO_WE_OFFER') }}</p></a>
-                <a href="#"><p>{{ t('FOOTER_HOW_TO_USE') }}</p></a>
-                <a href="#"><p>{{ t('FOOTER_OUR_OFFERS') }}</p></a>
+                <RouterLink to="/" class="nav-link">
+                    {{ t('FOOTER_WHO_ARE_WE') }}
+                </RouterLink>
+                <RouterLink to="/" class="nav-link">
+                    {{ t('FOOTER_WHAT_DO_WE_OFFER') }}
+                </RouterLink>
+                <RouterLink to="/" class="nav-link">
+                    {{ t('FOOTER_HOW_TO_USE') }}
+                </RouterLink>
+                <RouterLink :to="ROUTE_CONSTS.OFFERS" class="nav-link">
+                    {{ t('FOOTER_OUR_OFFERS') }}
+                </RouterLink>
             </div>
             <div class="footer-list footer-social">
                 <h4>{{ t('FOOTER_GET_IN_TOUCH') }}</h4>

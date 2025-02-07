@@ -1,6 +1,7 @@
 <script setup>
     import { ref } from "vue";
     import { useI18n } from "vue-i18n";
+    import { ROUTE_CONSTS } from '@/router.js';
     
     const { t } = useI18n();
     const logo = new URL('/src/assets/LogoFormatic.png', import.meta.url).href
@@ -19,8 +20,10 @@
 <template>
     <div class="header-nav">
         <div :class="`header-wrapper ${lang === 'ar' ? 'rtl' : ''}`">
-            <div class="header-right">
-                <img :src="logo" />
+            <div class="header-right" v-on:click="isMenuOpen = false">
+                <RouterLink :to="ROUTE_CONSTS.HOME">
+                    <img :src="logo" />
+                </RouterLink>
             </div>
 
             <!-- Hamburger Button for Small Screens -->
@@ -33,18 +36,26 @@
             </button>
 
             <BNav v-if="!isMenuOpen" class="header-left">
-                <BNavItem href="#">
-                    {{ t('HEADER_NAV_OUR_OFFERS') }}
-                </BNavItem>
-                <BNavItem href="#">
+                <li class="nav-item">
+                    <RouterLink :to="ROUTE_CONSTS.OFFERS" class="nav-link">
+                        {{ t('HEADER_NAV_OUR_OFFERS') }}
+                    </RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink to="#" class="nav-link">
                     {{ t('HEADER_NAV_HOW_TO_USE') }}
-                </BNavItem>
-                <BNavItem href="#">
+                    </RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink to="#" class="nav-link">
                     {{ t('HEADER_NAV_WHAT_DO_WE_OFFER') }}
-                </BNavItem>
-                <BNavItem href="#">
+                    </RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink to="#" class="nav-link">
                     {{ t('HEADER_NAV_WHO_ARE_WE') }}
-                </BNavItem>
+                    </RouterLink>
+                </li>
                 <BButton pill class="header-btn secondary-btn">
                     {{ t('HEADER_NAV_SIGNIN') }}
                 </BButton>
@@ -57,18 +68,26 @@
         <!-- Navigation Menu -->
         <div :class="`mobile-menu ${isMenuOpen ? 'open-menu' : ''}`">
             <BNav class="mobile-menu-wrapper">
-                <BNavItem href="#">
-                    {{ t('HEADER_NAV_OUR_OFFERS') }}
-                </BNavItem>
-                <BNavItem href="#">
+                <li class="nav-item" v-on:click="isMenuOpen = false">
+                    <RouterLink :to="ROUTE_CONSTS.OFFERS" class="nav-link">
+                        {{ t('HEADER_NAV_OUR_OFFERS') }}
+                    </RouterLink>
+                </li>
+                <li class="nav-item" v-on:click="isMenuOpen = false">
+                    <RouterLink to="#" class="nav-link">
                     {{ t('HEADER_NAV_HOW_TO_USE') }}
-                </BNavItem>
-                <BNavItem href="#">
+                    </RouterLink>
+                </li>
+                <li class="nav-item" v-on:click="isMenuOpen = false">
+                    <RouterLink to="#" class="nav-link">
                     {{ t('HEADER_NAV_WHAT_DO_WE_OFFER') }}
-                </BNavItem>
-                <BNavItem href="#">
+                    </RouterLink>
+                </li>
+                <li class="nav-item" v-on:click="isMenuOpen = false">
+                    <RouterLink to="#" class="nav-link">
                     {{ t('HEADER_NAV_WHO_ARE_WE') }}
-                </BNavItem>
+                    </RouterLink>
+                </li>
                 <BButton pill class="header-btn secondary-btn">
                     {{ t('HEADER_NAV_SIGNIN') }}
                 </BButton>
@@ -78,4 +97,5 @@
             </BNav>
         </div>
     </div>
+    <div v-if="isMenuOpen" class="backdrop-layer" v-on:click="isMenuOpen = false"></div>
 </template>
