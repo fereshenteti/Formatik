@@ -14,7 +14,7 @@
     <footer class="footer">
         <div :class="`footer-container ${lang === 'ar' ? 'rtl' : ''}`">
             <div class="footer-logo"><img :src="logo"/></div>
-            <div class="footer-list">
+            <div class="footer-list footer-address">
                 <h4>{{ t('FOOTER_OUR_ADDRESS') }}</h4>
                 <p>{{ t('FOOTER_ADDRESS') }}</p>
                 <h4>{{ t('FOOTER_CALL_US') }}</h4>
@@ -27,7 +27,7 @@
                 <a href="#"><p>Privacy policy</p></a>
                 <a href="#"><p>Legal notice</p></a>
             </div> -->
-            <div class="footer-list">
+            <div class="footer-list footer-links">
                 <h4>{{ t('FOOTER_LINKS') }}</h4>
                 <a href="#"><p>{{ t('FOOTER_WHO_ARE_WE') }}</p></a>
                 <a href="#"><p>{{ t('FOOTER_WHAT_DO_WE_OFFER') }}</p></a>

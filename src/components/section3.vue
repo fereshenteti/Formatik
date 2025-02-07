@@ -16,30 +16,43 @@
             <div class="section3-cards">
                 <div class="cards-bg"></div>
                 <div :class="`cards-wrapper ${lang === 'ar' ? 'rtl' : ''}`">
-                    <div class="card">
-                        <div class="card-img">
-                            <img :src="card2"/>
-                        </div>
-                        <h4>{{ t('HOME_SECTION3_CARD2_TEXT') }}</h4>
-                    </div>
-                    <div class="card">
-                        <h4>{{ t('HOME_SECTION3_CARD1_TEXT') }}</h4>
-                        <div class="card-img">
-                            <img :src="card1"/>
+
+                    <div class="card-container">
+                        <div class="card">
+                            <h4>{{ t('HOME_SECTION3_CARD1_TEXT') }}</h4>
+                            <div class="card-img">
+                                <img :src="card1"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-img">
-                            <img :src="card4"/>
-                        </div>
-                        <h4>{{ t('HOME_SECTION3_CARD4_TEXT') }}</h4>
-                    </div>
-                    <div class="card">
-                        <h4>{{ t('HOME_SECTION3_CARD3_TEXT') }}</h4>
-                        <div class="card-img">
-                            <img :src="card3"/>
+
+                    <div class="card-container">
+                        <div class="card">
+                            <h4>{{ t('HOME_SECTION3_CARD2_TEXT') }}</h4>
+                            <div class="card-img">
+                                <img :src="card2"/>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="card-container">
+                        <div class="card">
+                            <h4>{{ t('HOME_SECTION3_CARD3_TEXT') }}</h4>
+                            <div class="card-img">
+                                <img :src="card3"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-container">
+                        <div class="card">
+                            <h4>{{ t('HOME_SECTION3_CARD4_TEXT') }}</h4>
+                            <div class="card-img">
+                                <img :src="card4"/>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
