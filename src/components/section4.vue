@@ -48,6 +48,7 @@
                             {{ t('HOME_SECTION4_USAGE_1') }}
                         </div>
                     </div>
+                    <div class="step-links"></div>
                 </div>
                 <div class="usage-card-wrapper">
                     <div class="card-number">
@@ -61,6 +62,7 @@
                             {{ t('HOME_SECTION4_USAGE_2') }}
                         </div>
                     </div>
+                    <div class="step-links"></div>
                 </div>
                 <div class="usage-card-wrapper">
                     <div class="card-number">
@@ -74,6 +76,7 @@
                             {{ t('HOME_SECTION4_USAGE_3') }}
                         </div>
                     </div>
+                    <div class="step-links"></div>
                 </div>
                 <div class="usage-card-wrapper">
                     <div class="card-number">

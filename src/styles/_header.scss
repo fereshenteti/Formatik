@@ -120,6 +120,9 @@
 @media screen and (max-width: $SCREEN_MEDIUM) {
     .header-nav{
         .header-wrapper{
+            .header-btn{
+                padding: 0.8rem;
+            }
             .hamburger-btn {
                 display: flex;
             }
@@ -128,7 +131,7 @@
             }
             .mobile-menu.open-menu{
                 display: block;
-                height: 330px;
+                height: 370px;
             }
         }
     }

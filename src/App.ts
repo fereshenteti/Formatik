@@ -1,1 +1,1 @@
-export const lang = "ar";
+export const lang = "fr";

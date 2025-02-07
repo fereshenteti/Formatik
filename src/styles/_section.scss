@@ -231,11 +231,13 @@
     background: linear-gradient(0deg, rgba(40,159,166,0.2) 20%, rgba(255,255,255,0) 100%);
     .testimonials-wrapper{
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         gap: 2rem;
         padding: 3rem;
         margin-bottom: 3rem;
+        width: 100vw;
+        overflow: auto;
         .testimonial-card{
             width: 100%;
             flex: 1;
@@ -277,8 +279,8 @@
                 height: 70px;
                 order: 0;
                 img{
-                    width: 70px;
-                    height: 70px;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
@@ -371,6 +373,16 @@
                     height: 1.5px;
                 }
             }
+            .step-links{
+                display: none;
+                width: 1.5px;
+                height: 100px;
+                background-image: linear-gradient(to bottom, #051c2c9c 33%, rgba(255, 255, 255, 0) 0%);
+                background-position: top;
+                background-size: 2px 10px;
+                background-repeat: repeat-y;
+                margin: 1rem auto 0;
+            }
         }
         &.rtl{
             flex-direction: row-reverse;
@@ -417,6 +429,7 @@
         margin: 0 2rem;
         border-radius: 30px;
         background-color: #289FA673;
+        $collapsibles-gap: 12px;
     
         .collapsible {
             background-color: white;
@@ -427,7 +440,7 @@
             text-align: left;
             outline: none;
             font-size: 15px;
-            margin: 8px 0;
+            margin: $collapsibles-gap 0;
             border-radius: 10px;
             display: flex;
             justify-content: space-between;
@@ -465,7 +478,7 @@
             overflow: hidden;
             transition: max-height 0.2s ease-out;
             background-color: white;
-            margin-top: -10px;
+            margin-top: -$collapsibles-gap;
             border-radius: 0 0 10px 10px;
             p{
                 margin-top: 0.5rem;
@@ -498,6 +511,15 @@
                 h1{
                     font-size: 50px;
                 }
+            }
+        }
+    }
+    .section4{
+        .testimonials-wrapper{
+            justify-content: flex-start;
+            .testimonial-card:nth-child(2){
+                transform: scale(1);
+                box-shadow: none;
             }
         }
     }
@@ -627,6 +649,86 @@
                             text-align: right !important;
                         }
                     }
+                }
+            }
+        }
+    }
+
+    .section4 {
+        .usage-wrapper{
+            flex-direction: column;
+            gap: 4rem;
+            .usage-card-wrapper{
+                &:not(:last-child) {
+                    .card-number::after{
+                        display: none;
+                    }
+                }
+                .step-links{
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .section5{
+        .qa-section{
+            padding: 2rem;
+            .collapsible{
+                h4{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SCREEN_SMALL) {
+    .section3{
+        .section3-cards{
+            .cards-wrapper{
+                .card{
+                    padding: 1rem 1.6rem;
+                    max-width: 280px;
+                }
+            }
+        }
+    }
+    .section4 {
+        .testimonials-wrapper {
+            .testimonial-card{
+                padding: 1.5rem;
+                min-width: 260px;
+                .testimonial{
+                    font-size: 14px;
+                }
+                .owner{
+                    .owner-info{
+                        h4{
+                            font-size: 16px;
+                        }
+                        p{
+                            font-size: 14px;
+                        }
+                    }
+                    .owner-photo{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+    .section5{
+        .qa-section{
+            .collapsible{
+                h4{
+                    font-size: 14px;
+                }
+            }
+            .collapsible-content{
+                p{
+                    font-size: 12px;
                 }
             }
         }
