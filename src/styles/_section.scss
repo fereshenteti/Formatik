@@ -655,14 +655,12 @@
     }
 
     .section4 {
-        .usage-wrapper{
+        .usage-wrapper, .usage-wrapper.rtl{
             flex-direction: column;
             gap: 4rem;
             .usage-card-wrapper{
-                &:not(:last-child) {
-                    .card-number::after{
-                        display: none;
-                    }
+                .card-number::after{
+                    display: none;
                 }
                 .step-links{
                     display: block;

@@ -121,7 +121,7 @@
 }
 
 @media screen and (max-width: $SCREEN_TABLET) {
-    .footer-container{
+    .footer-container, .footer-container.rtl{
         display: flex;
         flex-direction: column;
         gap: 1rem;
