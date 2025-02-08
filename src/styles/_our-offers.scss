@@ -1,4 +1,180 @@
 .our-offers-container{
     min-height: 100vh;
     margin-top: $header-height;
+    .our-offers-main-section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            margin: 4rem 0;
+        }
+        .level-selector{
+            padding: 0.6rem;
+            border-radius: 50px;
+            display: flex;
+            gap: 0.4rem;
+            box-shadow: #0000005c 0px 4px 8px 0px;
+            button{
+                padding: 12px 1.5rem;
+                background-color: transparent;
+                border: none;
+                color: gray;
+                &.selected{
+                    background-color: #051C2C;
+                    color: white;
+                }
+                &:not(.selected):hover{
+                    background-color: #ececec;
+                }
+            }
+        }
+
+        .packs-container{
+            border-radius: 45px;
+            margin: 3rem 2rem;
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 8px 2px;
+            .pack{
+                flex: 1;
+                border: 1px solid lightgray;
+                border-radius: 25px;
+                display: flex;
+                flex-direction: column;
+                padding: 8px;
+                gap: 0.6rem;
+                min-width: 350px;
+                max-width: 400px;
+                .pack-image{
+                    flex: 1;
+                    background-color: #D9D9D94D;
+                    border-radius: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 130px;
+                    max-height: 130px;
+                    img{
+                        width: 70%;
+                    }
+                    &.gold-pack{
+                        img{
+                            width: 60%;
+                        }
+                    }
+                }
+                .pack-details{
+                    flex: 2;
+                    border: 1px solid #D9D9D9CC;
+                    border-radius: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 20px;
+                    .pack-name{
+                        .platinium{
+                            color: $primary;
+                            font-weight: 700;
+                        }
+                        .plus{
+                            color: $accent;
+                            font-weight: 700;
+                            margin-left: 4px;
+                        }
+                        .gold{
+                            color: $gold;
+                            font-weight: 700;
+                        }
+                    }
+                    .pack-prices{
+                        >span{
+                            position: relative;
+                            margin: 0 1.3rem;
+                            &::after{
+                                content: 'DT';
+                                position: absolute;
+                                top: -4px;
+                                font-size: 20px;
+                            }
+                        }
+                        .old-price{
+                            color: $accent;
+                            font-size: 24px;
+                            font-weight: 500;
+                            text-decoration: line-through;
+                        }
+                        .new-price{
+                            font-size: 32px;
+                            font-weight: 600;
+                        }
+                    }
+                    .frequencies{
+                        border: 1px solid black;
+                        border-radius: 60px;
+                        display: flex;
+                        margin: 1rem 0;
+                        overflow: hidden;
+                        span{
+                            font-size: 12px;
+                            padding: 1rem 8px;
+                            cursor: pointer;
+                            &:first-child{
+                                padding-left: 1rem;
+                                border-right: 1px solid black;
+                            }
+                            &:last-child{
+                                padding-right: 1rem;
+                                border-left: 1px solid black;
+                            }
+                            &:hover{
+                                background-color: rgb(244, 244, 244);
+                            }
+                            &.selected{
+                                background-color: #051C2CE5;
+                                color: white;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .pack-features{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        margin: 1rem 0;
+                        .pack-feature{
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 1rem;
+                            img{
+                                width: 24px;
+                                height: 24px;
+                            }
+                            :not(.included){
+                                color: #A8A8A8;
+                            }
+                        }
+                    }
+                    button{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .our-offers-usage-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5rem auto;
+        h2{
+            span{
+                color: $accent;
+                font-weight: 500;
+            }
+        }
+    }
 }

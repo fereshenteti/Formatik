@@ -16,12 +16,14 @@ declare module 'vue' {
     Header_old: typeof import('./src/components/header_old.vue')['default']
     HomePage: typeof import('./src/components/home/homePage.vue')['default']
     OurOffers: typeof import('./src/components/ourOffers.vue')['default']
+    Pack: typeof import('./src/components/ourOffers/pack.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Section1: typeof import('./src/components/home/section1.vue')['default']
     Section2: typeof import('./src/components/home/section2.vue')['default']
     Section3: typeof import('./src/components/home/section3.vue')['default']
     Section4: typeof import('./src/components/home/section4.vue')['default']
+    Section4Usage: typeof import('./src/components/home/section4Usage.vue')['default']
     Section5: typeof import('./src/components/home/section5.vue')['default']
   }
 }
