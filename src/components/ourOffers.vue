@@ -1,47 +1,48 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import { reactive } from "vue";
+import { ref } from "vue";
 import section4Usage from "./home/section4Usage.vue";
-
+import customSelect from "@/components/customSelect.vue";
 const platinium = new URL('/src/assets/platinium.png', import.meta.url).href
 const platinium_plus = new URL('/src/assets/platinium_plus.png', import.meta.url).href
 const gold = new URL('/src/assets/gold.png', import.meta.url).href
 const stopIcon = new URL('/src/assets/stop.svg', import.meta.url).href
 const tickIcon = new URL('/src/assets/tick.svg', import.meta.url).href
-
+const d17 = new URL('/src/assets/d17.png', import.meta.url).href
+const paymentCards = new URL('/src/assets/bank-card.png', import.meta.url).href
+const mobilePayment = new URL('/src/assets/mobile-payment.png', import.meta.url).href
+const tnPost = new URL('/src/assets/tunisian-post.png', import.meta.url).href
 const { t } = useI18n();
-const levels = reactive([
-    {label: t('OUR_OFFERS_LEVEL_1'), selected: true},
-    {label: t('OUR_OFFERS_LEVEL_2'), selected: false},
-    {label: t('OUR_OFFERS_LEVEL_3'), selected: false},
-    {label: t('OUR_OFFERS_LEVEL_4'), selected: false}
-])
+
+
+const selectedLevel = ref("1");
+
+const levelsOptions = ref([
+  { label: t('OUR_OFFERS_LEVEL_1'), value: "1" },
+  { label: t('OUR_OFFERS_LEVEL_2'), value: "2" },
+  { label: t('OUR_OFFERS_LEVEL_3'), value: "3" },
+  { label: t('OUR_OFFERS_LEVEL_4'), value: "4" },
+]);
+
 const frequencies = reactive([
     {label: '1 month', selected: true},
     {label: '3 months', selected: false},
     {label: 'Rest of the year', selected: false}
 ])
-const platiniumPackFeatures = reactive([
-    {label: t('PACKS_INCLUDE_1'), included: false},
-    {label: t('PACKS_INCLUDE_2'), included: false},
-    {label: t('PACKS_INCLUDE_3'), included: true},
-    {label: t('PACKS_INCLUDE_4'), included: true},
-])
-const platiniumPlusPackFeatures = reactive([
-    {label: t('PACKS_INCLUDE_1'), included: false},
-    {label: t('PACKS_INCLUDE_2'), included: true},
-    {label: t('PACKS_INCLUDE_3'), included: true},
-    {label: t('PACKS_INCLUDE_4'), included: true},
-])
-const goldPackFeatures = reactive([
-    {label: t('PACKS_INCLUDE_1'), included: true},
-    {label: t('PACKS_INCLUDE_2'), included: true},
-    {label: t('PACKS_INCLUDE_3'), included: true},
-    {label: t('PACKS_INCLUDE_4'), included: true},
-])
 
-const levelSelected = (levelIndex) => {
-    levels.forEach((level, i) => level.selected = i === levelIndex)
+const packsLabels = [
+    t('PACKS_INCLUDE_1'),
+    t('PACKS_INCLUDE_2'),
+    t('PACKS_INCLUDE_3'),
+    t('PACKS_INCLUDE_4'),
+]
+const platiniumPackFeatures = [false, false, true, true]
+const platiniumPlusPackFeatures = [false, true, true, true]
+const goldPackFeatures = [true, true, true, true]
+
+const levelSelected = (level) => {
+    selectedLevel.value = level;
 }
 
 const frequencySelected = (frequencyIndex) => {
@@ -55,10 +56,15 @@ const frequencySelected = (frequencyIndex) => {
             <h1>{{ t('OUR_OFFERS_MAIN_SECTION_TITLE') }}</h1>
 
             <div class="level-selector">
-                <BButton pill v-for="(level, i) in levels" :class="{ selected: level.selected }" :key="i" @click="levelSelected(i)">
+                <BButton pill v-for="(level, i) in levelsOptions" :class="{ selected: level.value === selectedLevel }" :key="`level-${i}`" @click="levelSelected(level.value)">
                     {{ level.label }}
                 </BButton>
             </div>
+
+            <customSelect 
+                v-model="selectedLevel" 
+                :options="levelsOptions" 
+            />
 
             <div class="packs-container">
 
@@ -81,11 +87,11 @@ const frequencySelected = (frequencyIndex) => {
                             </span>
                         </div>
                         <div class="pack-features">
-                            <div v-for="feature in platiniumPackFeatures" class="pack-feature">
-                                <span :class="{ included: feature.included }">
-                                    {{ feature.label }}
+                            <div v-for="(feature, i) in packsLabels" class="pack-feature">
+                                <span :class="{ included: platiniumPackFeatures[i] }">
+                                    {{ feature }}
                                 </span>
-                                <img :src="feature.included ? tickIcon : stopIcon" />
+                                <img :src="platiniumPackFeatures[i] ? tickIcon : stopIcon" />
                             </div>
                         </div>
                         <BButton pill class="accent-btn accent-btn-md">{{ t('HOME_SECTION1_BUTTON') }}</BButton>
@@ -112,11 +118,11 @@ const frequencySelected = (frequencyIndex) => {
                             </span>
                         </div>
                         <div class="pack-features">
-                            <div v-for="feature in platiniumPlusPackFeatures" class="pack-feature">
-                                <span :class="{ included: feature.included }">
-                                    {{ feature.label }}
+                            <div v-for="(feature, i) in packsLabels" class="pack-feature">
+                                <span :class="{ included: platiniumPlusPackFeatures[i] }">
+                                    {{ feature }}
                                 </span>
-                                <img :src="feature.included ? tickIcon : stopIcon" />
+                                <img :src="platiniumPlusPackFeatures[i] ? tickIcon : stopIcon" />
                             </div>
                         </div>
                         <BButton pill class="accent-btn accent-btn-md">{{ t('HOME_SECTION1_BUTTON') }}</BButton>
@@ -142,11 +148,11 @@ const frequencySelected = (frequencyIndex) => {
                             </span>
                         </div>
                         <div class="pack-features">
-                            <div v-for="feature in goldPackFeatures" class="pack-feature">
-                                <span :class="{ included: feature.included }">
-                                    {{ feature.label }}
+                            <div v-for="(feature, i) in packsLabels" class="pack-feature">
+                                <span :class="{ included: goldPackFeatures[i] }">
+                                    {{ feature }}
                                 </span>
-                                <img :src="feature.included ? tickIcon : stopIcon" />
+                                <img :src="goldPackFeatures[i] ? tickIcon : stopIcon" />
                             </div>
                         </div>
                         <BButton pill class="accent-btn accent-btn-md">{{ t('HOME_SECTION1_BUTTON') }}</BButton>
@@ -156,8 +162,59 @@ const frequencySelected = (frequencyIndex) => {
             </div>
         </div>
 
-        <div class="our-offers-usage-section">
-            <section4Usage/>
+        <div class="sections-group">
+            <div class="our-offers-usage-section">
+                <section4Usage/>
+            </div>
+    
+            <div class="payment-methods">
+                <div class="payment-methods-wrapper">
+                    <h1>طرق <span>الدفع</span></h1>
+                    <p>
+                        نقدم لك مجموعة متنوعة من طرق الدفع الآمنة والمرنة التي تتيح لك اختيار الأنسب لك، لتتمكن من إتمام عمليات الدفع
+        بكل سهولة وأمان، والاستمتاع بتجربة تعليمية مريحة وسلسة دون أي تعقيدات!
+                    </p>
+                    <div class="methods">
+                        <div class="payment-method">
+                            <div>
+                                <img :src="d17" />
+                                <div>
+                                    <p>D17</p>
+                                    <p>DIGIPOSTBANK</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-method">
+                            <div>
+                                <img :src="paymentCards" />
+                                <div>
+                                    <p>Versement</p>
+                                    <p>Bancaire</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-method">
+                            <div>
+                                <img :src="mobilePayment" />
+                                <div>
+                                    <p>Paiement</p>
+                                    <p>en ligne</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-method">
+                            <div>
+                                <img :src="tnPost" />
+                                <div>
+                                    <p>Versement</p>
+                                    <p>par Poste</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <BButton pill class="accent-btn accent-btn-md">{{ t('HOME_SECTION1_BUTTON') }}</BButton>
+                </div>
+            </div>
         </div>
 
     </div>

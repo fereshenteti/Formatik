@@ -11,6 +11,7 @@ declare module 'vue' {
     BNav: typeof import('bootstrap-vue-next/components/BNav')['BNav']
     BNavItem: typeof import('bootstrap-vue-next/components/BNav')['BNavItem']
     copy: typeof import('./src/components/header copy.vue')['default']
+    CustomSelect: typeof import('./src/components/customSelect.vue')['default']
     Footer: typeof import('./src/components/footer.vue')['default']
     Header: typeof import('./src/components/header.vue')['default']
     Header_old: typeof import('./src/components/header_old.vue')['default']
