@@ -1,8 +1,8 @@
 <script setup>
     import { useI18n } from "vue-i18n";
     import { ROUTE_CONSTS } from '@/router.js';
-    import { lang } from '@/App';
-    
+    import { store } from '@/store';
+
     const { t } = useI18n();
     const logo = new URL('/src/assets/LogoFormatic.png', import.meta.url).href
     const facebook = new URL('/src/assets/facebook.svg', import.meta.url).href
@@ -13,7 +13,7 @@
 
 <template>
     <footer class="footer">
-        <div :class="`footer-container ${lang === 'ar' ? 'rtl' : ''}`">
+        <div :class="`footer-container ${store.lang === 'ar' ? 'rtl' : ''}`">
             <div class="footer-logo"><img :src="logo"/></div>
             <div class="footer-list footer-address">
                 <h4>{{ t('FOOTER_OUR_ADDRESS') }}</h4>
@@ -61,6 +61,7 @@
                 </div>
             </div>
         </div>
+        lang: {{ store.lang }}
         <div class="footer-copyright">{{ t('FOOTER_COPYRIGHT') }}</div>
     </footer>
 </template>

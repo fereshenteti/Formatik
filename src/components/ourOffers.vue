@@ -4,7 +4,7 @@ import { reactive } from "vue";
 import { ref } from "vue";
 import section4Usage from "./home/section4Usage.vue";
 import customSelect from "@/components/customSelect.vue";
-import { lang } from '@/App';
+import { store } from '@/store';
 
 const platinium = new URL('/src/assets/platinium.png', import.meta.url).href
 const platinium_plus = new URL('/src/assets/platinium_plus.png', import.meta.url).href
@@ -27,9 +27,9 @@ const levelsOptions = ref([
 ]);
 
 const frequencies = reactive([
-    {label: '1 month', selected: true},
-    {label: '3 months', selected: false},
-    {label: 'Rest of the year', selected: false}
+    {label: '1 mois', selected: true},
+    {label: '3 mois', selected: false},
+    {label: "Reste de l'année", selected: false}
 ])
 
 const packsLabels = [
@@ -52,7 +52,7 @@ const frequencySelected = (frequencyIndex) => {
 </script>
 
 <template>
-    <div :class="`our-offers-container ${lang === 'ar' ? 'rtl' : ''}`">
+    <div :class="`our-offers-container ${store.lang === 'ar' ? 'rtl' : ''}`">
         <div class="our-offers-main-section">
             <h1>{{ t('OUR_OFFERS_MAIN_SECTION_TITLE') }}</h1>
 

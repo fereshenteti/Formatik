@@ -1,7 +1,7 @@
 <script setup>
     import { useI18n } from "vue-i18n";
-    import { lang } from '@/App';
-    
+    import { store } from '@/store';
+
     const { t } = useI18n();
 
     const usageIcon1 = new URL('/src/assets/usage-icon1.svg', import.meta.url).href
@@ -13,7 +13,7 @@
 <template>
     <h2>{{ t('HOME_SECTION4_TITLE2_pt1') }} <span>{{ t('HOME_SECTION4_TITLE2_pt2') }}</span> {{ t('HOME_SECTION4_TITLE2_pt3') }}</h2>
 
-    <div :class="`usage-wrapper ${lang === 'ar' ? 'rtl' : ''}`">
+    <div :class="`usage-wrapper ${store.lang === 'ar' ? 'rtl' : ''}`">
         <div class="usage-card-wrapper">
             <div class="card-number">
                 <span>01</span>

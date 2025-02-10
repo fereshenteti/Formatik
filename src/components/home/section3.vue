@@ -1,6 +1,6 @@
 <script setup>
     import { useI18n } from "vue-i18n";
-    import { lang } from '@/App';
+    import { store } from '@/store';
     const { t } = useI18n();
     const card1 = new URL('/src/assets/card1.svg', import.meta.url).href
     const card2 = new URL('/src/assets/card2.svg', import.meta.url).href
@@ -14,7 +14,7 @@
             <h2>{{ t('HOME_SECTION3_TITLE') }}</h2>
             <div class="section3-cards">
                 <div class="cards-bg"></div>
-                <div :class="`cards-wrapper ${lang === 'ar' ? 'rtl' : ''}`">
+                <div :class="`cards-wrapper ${store.lang === 'ar' ? 'rtl' : ''}`">
 
                     <div class="card-container">
                         <div class="card">

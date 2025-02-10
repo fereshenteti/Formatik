@@ -19,6 +19,7 @@
             gap: 0.4rem;
             box-shadow: #0000005c 0px 4px 8px 0px;
             button{
+                max-width: 200px;
                 padding: 12px 1.5rem;
                 background-color: transparent;
                 border: none;
@@ -262,9 +263,10 @@
     .our-offers-container {
         .our-offers-main-section{
             .level-selector{
-                button{
-                    padding: 12px 1.2rem;
-                }
+                display: none;
+            }
+            .dropdown-level-selector{
+                display: flex;
             }
             .packs-container{
                 gap: 3rem;
@@ -294,12 +296,6 @@
         .our-offers-main-section{
             h1{
                 margin: 3rem 0;
-            }
-            .level-selector{
-                display: none;
-            }
-            .dropdown-level-selector{
-                display: flex;
             }
         }
         .payment-methods-wrapper{

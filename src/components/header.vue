@@ -3,16 +3,15 @@
     import { useI18n } from "vue-i18n";
     import { ROUTE_CONSTS } from '@/router.js';
     import customSelect from "@/components/customSelect.vue";
-    import { lang } from '@/App';
+    import { store } from '@/store';
     
-    const { t, availableLocales, locale } = useI18n();
+    const { t, availableLocales } = useI18n();
     const logo = new URL('/src/assets/LogoFormatic.png', import.meta.url).href
 
-    const selectedLang = ref(locale.value);
-    const langOptions = ref([
-        { label: "ar", value: "ar" },
-        { label: "fr", value: "fr" }
-    ]);
+    const selectedLang = ref(store.lang);
+    const langOptions = ref(availableLocales.map(locale => {
+        return {label: locale, value: locale}
+    }));
 
     // State for menu toggle
     const isMenuOpen = ref(false);
@@ -23,14 +22,13 @@
     };
 
     watch(selectedLang, () => {
-        console.log('selectedLang:', selectedLang.value)
-        locale.value = selectedLang.value;
+        store.changeLang(selectedLang.value);
     })
 </script>
 
 <template>
     <div class="header-nav">
-        <div :class="`header-wrapper ${lang === 'ar' ? 'rtl' : ''}`">
+        <div :class="`header-wrapper ${store.lang === 'ar' ? 'rtl' : ''}`">
             <div class="header-right" v-on:click="isMenuOpen = false">
                 <RouterLink :to="ROUTE_CONSTS.HOME">
                     <img :src="logo" />

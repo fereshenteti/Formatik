@@ -3,11 +3,11 @@
     const { t } = useI18n();
     const bg = new URL('/src/assets/bg-texture.svg', import.meta.url).href
     const avatar = new URL('/src/assets/avatar.png', import.meta.url).href
-    import { lang } from '@/App';
+    import { store } from '@/store';
 </script>
 
 <template>
-    <section :class="`section main-section ${lang === 'ar' ? 'rtl' : ''}`">
+    <section :class="`section main-section ${store.lang === 'ar' ? 'rtl' : ''}`">
         <div class="main-section-bg">
             <img :src="bg"/>
         </div>
