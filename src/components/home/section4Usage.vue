@@ -1,5 +1,7 @@
 <script setup>
     import { useI18n } from "vue-i18n";
+    import { lang } from '@/App';
+    
     const { t } = useI18n();
 
     const usageIcon1 = new URL('/src/assets/usage-icon1.svg', import.meta.url).href

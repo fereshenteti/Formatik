@@ -4,6 +4,8 @@ import { reactive } from "vue";
 import { ref } from "vue";
 import section4Usage from "./home/section4Usage.vue";
 import customSelect from "@/components/customSelect.vue";
+import { lang } from '@/App';
+
 const platinium = new URL('/src/assets/platinium.png', import.meta.url).href
 const platinium_plus = new URL('/src/assets/platinium_plus.png', import.meta.url).href
 const gold = new URL('/src/assets/gold.png', import.meta.url).href
@@ -14,7 +16,6 @@ const paymentCards = new URL('/src/assets/bank-card.png', import.meta.url).href
 const mobilePayment = new URL('/src/assets/mobile-payment.png', import.meta.url).href
 const tnPost = new URL('/src/assets/tunisian-post.png', import.meta.url).href
 const { t } = useI18n();
-
 
 const selectedLevel = ref("1");
 
@@ -51,7 +52,7 @@ const frequencySelected = (frequencyIndex) => {
 </script>
 
 <template>
-    <div class="our-offers-container">
+    <div :class="`our-offers-container ${lang === 'ar' ? 'rtl' : ''}`">
         <div class="our-offers-main-section">
             <h1>{{ t('OUR_OFFERS_MAIN_SECTION_TITLE') }}</h1>
 
@@ -169,11 +170,8 @@ const frequencySelected = (frequencyIndex) => {
     
             <div class="payment-methods">
                 <div class="payment-methods-wrapper">
-                    <h1>طرق <span>الدفع</span></h1>
-                    <p>
-                        نقدم لك مجموعة متنوعة من طرق الدفع الآمنة والمرنة التي تتيح لك اختيار الأنسب لك، لتتمكن من إتمام عمليات الدفع
-        بكل سهولة وأمان، والاستمتاع بتجربة تعليمية مريحة وسلسة دون أي تعقيدات!
-                    </p>
+                    <h1>{{ t('PAYMENT_METHODS_1') }} <span>{{ t('PAYMENT_METHODS_2') }}</span></h1>
+                    <p>{{ t('PAYMENT_METHODS_DESCRIPTION') }}</p>
                     <div class="methods">
                         <div class="payment-method">
                             <div>

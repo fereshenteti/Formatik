@@ -21,8 +21,11 @@ body{
     &-md{
         margin: 1rem 0;
         padding: 8px 34px;
-        font-size: 28px;
+        font-size: 20px;
     }
+}
+.rtl .accent-btn-md{
+    font-size: 28px;
 }
 .secondary-btn{
     border: none;

@@ -1,12 +1,11 @@
 <script setup>
     import { useI18n } from "vue-i18n";
+    import { lang } from '@/App';
     const { t } = useI18n();
     const card1 = new URL('/src/assets/card1.svg', import.meta.url).href
     const card2 = new URL('/src/assets/card2.svg', import.meta.url).href
     const card3 = new URL('/src/assets/card3.svg', import.meta.url).href
     const card4 = new URL('/src/assets/card4.svg', import.meta.url).href
-    const props = defineProps(['lang'])
-    const lang = props?.lang
 </script>
 
 <template>

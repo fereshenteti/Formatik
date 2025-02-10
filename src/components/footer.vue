@@ -1,15 +1,14 @@
 <script setup>
     import { useI18n } from "vue-i18n";
     import { ROUTE_CONSTS } from '@/router.js';
-
+    import { lang } from '@/App';
+    
     const { t } = useI18n();
     const logo = new URL('/src/assets/LogoFormatic.png', import.meta.url).href
     const facebook = new URL('/src/assets/facebook.svg', import.meta.url).href
     const instagram = new URL('/src/assets/instagram.svg', import.meta.url).href
     const youtube = new URL('/src/assets/youtube.svg', import.meta.url).href
     const tiktok = new URL('/src/assets/tiktok.svg', import.meta.url).href
-    const props = defineProps(['lang'])
-    const lang = props?.lang
 </script>
 
 <template>

@@ -71,7 +71,7 @@
   <style scoped>
   .dropdown-level-selector {
     position: relative;
-    width: 250px;
+    min-width: 250px;
     cursor: pointer;
     border: 1px solid #ccc;
     padding: 12px 1rem;
@@ -85,8 +85,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     padding: 5px;
-    font-size: 20px;
+    font-size: 16px;
   }
   
   .arrow-icon {

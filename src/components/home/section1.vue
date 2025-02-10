@@ -3,8 +3,7 @@
     const { t } = useI18n();
     const bg = new URL('/src/assets/bg-texture.svg', import.meta.url).href
     const avatar = new URL('/src/assets/avatar.png', import.meta.url).href
-    const props = defineProps(['lang'])
-    const lang = props?.lang
+    import { lang } from '@/App';
 </script>
 
 <template>
@@ -16,7 +15,7 @@
             <div class="section-left">
                 <h1>{{ t('HOME_SECTION1_TITLE') }}</h1>
                 <h2>{{ t('HOME_SECTION1_SUBTITLE') }}</h2>
-                <p>{{ t('HOME_SECTION1_DESCRIPTION') }}<strong>{{ t('HOME_SECTION1_DESCRIPTION2') }}</strong></p>
+                <p>{{ t('HOME_SECTION1_DESCRIPTION') }} <strong>{{ t('HOME_SECTION1_DESCRIPTION2') }}</strong></p>
                 <BButton pill class="accent-btn accent-btn-md">{{ t('HOME_SECTION1_BUTTON') }}</BButton>
             </div>
             <div class="section-right">

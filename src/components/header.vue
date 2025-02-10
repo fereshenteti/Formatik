@@ -1,12 +1,18 @@
 <script setup>
-    import { ref } from "vue";
+    import { ref, watch } from "vue";
     import { useI18n } from "vue-i18n";
     import { ROUTE_CONSTS } from '@/router.js';
+    import customSelect from "@/components/customSelect.vue";
+    import { lang } from '@/App';
     
-    const { t } = useI18n();
+    const { t, availableLocales, locale } = useI18n();
     const logo = new URL('/src/assets/LogoFormatic.png', import.meta.url).href
-    const props = defineProps(['lang'])
-    const lang = props?.lang
+
+    const selectedLang = ref(locale.value);
+    const langOptions = ref([
+        { label: "ar", value: "ar" },
+        { label: "fr", value: "fr" }
+    ]);
 
     // State for menu toggle
     const isMenuOpen = ref(false);
@@ -15,6 +21,11 @@
     const toggleMenu = () => {
         isMenuOpen.value = !isMenuOpen.value;
     };
+
+    watch(selectedLang, () => {
+        console.log('selectedLang:', selectedLang.value)
+        locale.value = selectedLang.value;
+    })
 </script>
 
 <template>
@@ -62,6 +73,10 @@
                 <BButton pill class="header-btn accent-btn">
                     {{ t('HEADER_NAV_SIGNUP') }}
                 </BButton>
+                <customSelect 
+                    v-model="selectedLang" 
+                    :options="langOptions" 
+                />
             </BNav>
         </div>
 

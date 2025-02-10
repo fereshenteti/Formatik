@@ -1,8 +1,7 @@
 <script setup>
     import { useI18n } from "vue-i18n";
     const { t } = useI18n();
-    const props = defineProps(['lang'])
-    const lang = props?.lang
+    import { lang } from '@/App';
 </script>
 
 <template>

@@ -2,8 +2,7 @@
     import { useI18n } from "vue-i18n";
     const { t } = useI18n();
     const plusIcon = new URL('/src/assets/plus.svg', import.meta.url).href
-    const props = defineProps(['lang'])
-    const lang = props?.lang
+    import { lang } from '@/App';
 
     const toggleCollapse = ($event) => {
         $event.stopPropagation();

@@ -1,12 +1,11 @@
 <script setup>
     import { useI18n } from "vue-i18n";
     import section4Usage from "./section4Usage.vue";
+    import { lang } from '@/App';
+    
     const { t } = useI18n();
     const star = new URL('/src/assets/star.svg', import.meta.url).href
     const avatar = new URL('/src/assets/avatar2.png', import.meta.url).href
-    
-    const props = defineProps(['lang'])
-    const lang = props?.lang
 </script>
 
 <template>
