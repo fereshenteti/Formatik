@@ -61,7 +61,6 @@
                 </div>
             </div>
         </div>
-        lang: {{ store.lang }}
         <div class="footer-copyright">{{ t('FOOTER_COPYRIGHT') }}</div>
     </footer>
 </template>

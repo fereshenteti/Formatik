@@ -71,10 +71,10 @@
                 <BButton pill class="header-btn accent-btn">
                     {{ t('HEADER_NAV_SIGNUP') }}
                 </BButton>
-                <customSelect 
+                <!-- <customSelect 
                     v-model="selectedLang" 
                     :options="langOptions" 
-                />
+                /> -->
             </BNav>
         </div>
 

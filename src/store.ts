@@ -8,5 +8,6 @@ export const store = reactive({
   changeLang(lang: 'ar' | 'fr') {
     locale.value = lang;
     this.lang = lang;
+    localStorage.setItem("formatik_lang", lang);
   }
 })

@@ -29,7 +29,7 @@ const levelsOptions = ref([
 const frequencies = reactive([
     {label: '1 mois', selected: true},
     {label: '3 mois', selected: false},
-    {label: "Reste de l'année", selected: false}
+    {label: "reste de l'année", selected: false}
 ])
 
 const packsLabels = [

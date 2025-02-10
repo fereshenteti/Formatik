@@ -14,9 +14,18 @@ const loadLocaleMessages = () => {
     return messages;
 }
 
+const getLangFromLocalStorage = (): 'ar' | 'fr' => {
+    const storageLang = localStorage.getItem("formatik_lang");
+    if(!storageLang || (storageLang !== 'ar' && storageLang !== 'fr')) {
+        localStorage.setItem("formatik_lang", 'ar');
+        return 'ar';
+    }
+    return storageLang;
+}
+
 export default createI18n({
     legacy: false,
-    locale: 'ar',
+    locale: getLangFromLocalStorage(),
     fallbackLocale: 'ar',
     messages: loadLocaleMessages()
 })
