@@ -17,19 +17,19 @@
             border-radius: 50px;
             display: flex;
             gap: 0.4rem;
-            box-shadow: #0000005c 0px 4px 8px 0px;
+            box-shadow: 0px 4px 8px 0px $box-shadow-lvl2;
             button{
                 max-width: 200px;
                 padding: 12px 1.5rem;
                 background-color: transparent;
                 border: none;
-                color: gray;
+                color: $light-text;
                 &.selected{
-                    background-color: #051C2C;
-                    color: white;
+                    background-color: $secondary;
+                    color: $light;
                 }
                 &:not(.selected):hover{
-                    background-color: #ececec;
+                    background-color: $bg-hover;
                 }
             }
         }
@@ -42,10 +42,10 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
-            box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 8px 2px;
+            box-shadow: 0px 2px 8px 2px $box-shadow-lvl2;
             .pack{
                 flex: 1;
-                border: 1px solid lightgray;
+                border: 1px solid $border;
                 border-radius: 25px;
                 display: flex;
                 flex-direction: column;
@@ -55,7 +55,7 @@
                 max-width: 400px;
                 .pack-image{
                     flex: 1;
-                    background-color: #D9D9D94D;
+                    background-color: $image-placeholder;
                     border-radius: 15px;
                     display: flex;
                     justify-content: center;
@@ -73,7 +73,7 @@
                 }
                 .pack-details{
                     flex: 2;
-                    border: 1px solid #D9D9D9CC;
+                    border: 1px solid $border;
                     border-radius: 15px;
                     display: flex;
                     flex-direction: column;
@@ -118,7 +118,7 @@
                     }
                     .frequencies{
                         width: 100%;
-                        border: 1px solid black;
+                        border: 1px solid $secondary;
                         border-radius: 60px;
                         display: flex;
                         margin: 1rem 0;
@@ -131,19 +131,19 @@
                             cursor: pointer;
                             &:first-child{
                                 padding-left: 1rem;
-                                border-right: 1px solid black;
+                                border-right: 1px solid $secondary;
                             }
                             &:last-child{
                                 padding-right: 1rem;
-                                border-left: 1px solid black;
+                                border-left: 1px solid $secondary;
                                 white-space: nowrap;
                             }
                             &:hover{
-                                background-color: rgb(244, 244, 244);
+                                background-color: $bg-hover;
                             }
                             &.selected{
-                                background-color: #051C2CE5;
-                                color: white;
+                                background-color: $secondary;
+                                color: $light;
                                 font-weight: 600;
                             }
                         }
@@ -162,7 +162,7 @@
                                 height: 24px;
                             }
                             :not(.included){
-                                color: #A8A8A8;
+                                color: $light-text;
                             }
                         }
                     }
@@ -174,7 +174,7 @@
         }
     }
     .sections-group{
-        background: linear-gradient(0deg, rgba(40,159,166,0.2) 20%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(0deg, $bg-gradient-side1 20%, $bg-gradient-side2 100%);
         padding-bottom: 2rem;
     }
     .our-offers-usage-section{
@@ -195,7 +195,7 @@
         width: fit-content;
         margin: auto;
         border-radius: 45px;
-        background-color: white;
+        background-color: $light;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -208,7 +208,7 @@
             }
         }
         p{
-            text-align: justify;
+            text-align: center;
             max-width: 800px;
         }
         .methods{
@@ -219,11 +219,11 @@
             .payment-method{
                 width: 180px;
                 padding: 8px;
-                border: 1px solid #D9D9D9CC;
+                border: 1px solid $border;
                 border-radius: 25px;
                 >div{
                     padding: 1rem;
-                    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 7px 0px;
+                    box-shadow: 0px 3px 7px 0px $box-shadow-lvl1;
                     border-radius: 18px;
                     display: flex;
                     flex-direction: column;
@@ -244,16 +244,9 @@
                         margin: 0;
                         font-size: 14px;
                         font-weight: 600;
-                        color: #969696;
+                        color: $light-text;
                     }
                 }
-            }
-        }
-    }
-    &.rtl{
-        .payment-methods-wrapper{
-            p{
-                direction: rtl;
             }
         }
     }
@@ -315,6 +308,13 @@
                             font-size: 16px;
                             text-align: left;
                         }
+                    }
+                }
+            }
+            &.rtl{
+                .payment-methods-wrapper{
+                    p{
+                        direction: rtl;
                     }
                 }
             }
