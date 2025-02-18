@@ -15,6 +15,7 @@ export default defineConfig({
       resolvers: [BootstrapVueNextResolver()],
     })
   ],
+  base: "/formatik-academy/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

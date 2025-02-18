@@ -18,14 +18,14 @@
                 font-weight: 600;
             }
         }
+        .footer-label{
+            color: $primary;
+        }
         a{
             margin-bottom: 8px;
             color: $secondary;
             text-decoration: none;
             &:hover{
-                color: $primary;
-            }
-            .footer-label{
                 color: $primary;
             }
         }

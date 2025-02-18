@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <h2>{{ t('HOME_SECTION4_TITLE2_pt1') }} <span>{{ t('HOME_SECTION4_TITLE2_pt2') }}</span> {{ t('HOME_SECTION4_TITLE2_pt3') }}</h2>
+    <h2 id="howToUse">{{ t('HOME_SECTION4_TITLE2_pt1') }} <span>{{ t('HOME_SECTION4_TITLE2_pt2') }}</span> {{ t('HOME_SECTION4_TITLE2_pt3') }}</h2>
 
     <div :class="`usage-wrapper ${store.lang === 'ar' ? 'rtl' : ''}`">
         <div class="usage-card-wrapper">

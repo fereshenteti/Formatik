@@ -21,7 +21,7 @@
     }
     .main-section-wrapper{
         display: flex;
-        height: 100%;
+        height: calc(100vh - #{$header-height});
         .section-right{
             width: 50%;
             display: flex;
@@ -100,7 +100,7 @@
     align-items: center;
     justify-content: center;
     .section2-card{
-        max-width: 1000px;
+        // max-width: 1000px;
         width: 100%;
         height: auto;
         border-radius: 65px;
@@ -252,8 +252,8 @@
         .testimonial-card{
             width: 100%;
             flex: 1;
-            max-width: 400px;
-            min-width: 300px;
+            max-width: 500px;
+            min-width: 400px;
             border-radius: 25px;
             border: 1px solid $border;
             padding: 2rem;
@@ -277,6 +277,9 @@
             gap: 1rem;
             .owner-info{
                 order: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 h4{
                     font-size: 18px;
                     font-weight: 500;
@@ -312,13 +315,13 @@
 
 .usage-wrapper{
     display: flex;
-    gap: 50px;
+    gap: 100px;
     margin: 7rem 1rem 3rem;
     .usage-card-wrapper{
         position: relative;
         .usage-card{
             border-radius: 10px;
-            width: 160px;
+            width: 140px;
             height: 100%;
             box-shadow: 0px 1px 5px 0px $box-shadow-lvl2;
             background-color: $light;
@@ -348,6 +351,8 @@
             background-color: $image-placeholder;
             text-align: center;
             flex: 1;
+            font-size: 18px;
+            font-weight: bold;
         }
         .card-number{
             position: absolute;
@@ -361,7 +366,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 18px;
+            font-size: 14px;
+            font-weight: bold;
         }
         &:nth-child(2),&:nth-child(4){
             .card-number{
@@ -476,6 +482,7 @@
                 }
                 .plus-icon{
                     transform: rotate(45deg);
+                    filter: invert(18%) sepia(100%) saturate(2000%) hue-rotate(-20deg);
                 }
             }
             *{
@@ -558,7 +565,7 @@
         }
     }
     .usage-wrapper{
-        gap: 20px;
+        gap: 60px;
         .usage-card-wrapper {
             .usage-card{
                 width: 130px;

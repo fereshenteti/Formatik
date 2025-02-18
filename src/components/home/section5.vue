@@ -19,7 +19,7 @@
 </script>
 
 <template>
-    <section class="section">
+    <section id="faq" class="section">
         <div class="section5">
             <h2>{{ t('HOME_SECTION5_TITLE1') }} <span>{{ t('HOME_SECTION5_TITLE2') }}</span></h2>
 

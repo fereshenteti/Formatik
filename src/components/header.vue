@@ -4,7 +4,7 @@
     import { ROUTE_CONSTS } from '@/router.js';
     import customSelect from "@/components/customSelect.vue";
     import { store } from '@/store';
-    
+
     const { t, availableLocales } = useI18n();
     const logo = new URL('/src/assets/LogoFormatic.png', import.meta.url).href
 
@@ -23,7 +23,8 @@
 
     watch(selectedLang, () => {
         store.changeLang(selectedLang.value);
-    })
+    });
+
 </script>
 
 <template>
@@ -46,23 +47,23 @@
 
             <BNav v-if="!isMenuOpen" class="header-left">
                 <li class="nav-item">
-                    <RouterLink :to="ROUTE_CONSTS.OFFERS" class="nav-link">
-                        {{ t('HEADER_NAV_OUR_OFFERS') }}
+                    <RouterLink :to="'/#whoAreWe'" class="nav-link">
+                    {{ t('HEADER_NAV_WHO_ARE_WE') }}
                     </RouterLink>
                 </li>
                 <li class="nav-item">
-                    <RouterLink to="#" class="nav-link">
-                    {{ t('HEADER_NAV_HOW_TO_USE') }}
-                    </RouterLink>
-                </li>
-                <li class="nav-item">
-                    <RouterLink to="#" class="nav-link">
+                    <RouterLink :to="'/#ourServices'" class="nav-link">
                     {{ t('HEADER_NAV_WHAT_DO_WE_OFFER') }}
                     </RouterLink>
                 </li>
                 <li class="nav-item">
-                    <RouterLink to="#" class="nav-link">
-                    {{ t('HEADER_NAV_WHO_ARE_WE') }}
+                    <RouterLink :to="'/#howToUse'" class="nav-link">
+                    {{ t('HEADER_NAV_HOW_TO_USE') }}
+                    </RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink :to="ROUTE_CONSTS.OFFERS" class="nav-link">
+                        {{ t('HEADER_NAV_OUR_OFFERS') }}
                     </RouterLink>
                 </li>
                 <BButton pill class="header-btn secondary-btn">
@@ -82,23 +83,23 @@
         <div :class="`mobile-menu ${isMenuOpen ? 'open-menu' : ''}`">
             <BNav class="mobile-menu-wrapper">
                 <li class="nav-item" v-on:click="isMenuOpen = false">
-                    <RouterLink :to="ROUTE_CONSTS.OFFERS" class="nav-link">
-                        {{ t('HEADER_NAV_OUR_OFFERS') }}
+                    <RouterLink :to="'/#whoAreWe'" class="nav-link">
+                    {{ t('HEADER_NAV_WHO_ARE_WE') }}
                     </RouterLink>
                 </li>
                 <li class="nav-item" v-on:click="isMenuOpen = false">
-                    <RouterLink to="#" class="nav-link">
-                    {{ t('HEADER_NAV_HOW_TO_USE') }}
-                    </RouterLink>
-                </li>
-                <li class="nav-item" v-on:click="isMenuOpen = false">
-                    <RouterLink to="#" class="nav-link">
+                    <RouterLink :to="'/#ourServices'" class="nav-link">
                     {{ t('HEADER_NAV_WHAT_DO_WE_OFFER') }}
                     </RouterLink>
                 </li>
                 <li class="nav-item" v-on:click="isMenuOpen = false">
-                    <RouterLink to="#" class="nav-link">
-                    {{ t('HEADER_NAV_WHO_ARE_WE') }}
+                    <RouterLink :to="'/#howToUse'" class="nav-link">
+                    {{ t('HEADER_NAV_HOW_TO_USE') }}
+                    </RouterLink>
+                </li>
+                <li class="nav-item" v-on:click="isMenuOpen = false">
+                    <RouterLink :to="ROUTE_CONSTS.OFFERS" class="nav-link">
+                        {{ t('HEADER_NAV_OUR_OFFERS') }}
                     </RouterLink>
                 </li>
                 <BButton pill class="header-btn secondary-btn">

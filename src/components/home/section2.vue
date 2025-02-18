@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <section class="section">
+    <section id="whoAreWe" class="section">
         <div :class="`section2 ${store.lang === 'ar' ? 'rtl' : ''}`">
             <div class="section2-card">
                 <h2 class="section-title">{{ t('HOME_SECTION2_CARD_TITLE') }}</h2>

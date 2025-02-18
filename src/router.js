@@ -1,5 +1,5 @@
 import OurOffers from '@/components/ourOffers.vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import HomePage from './components/home/homePage.vue';
 
 export const ROUTE_CONSTS = {
@@ -13,15 +13,20 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition; // For back/forward navigation
-    } else {
-      return { top: 0, behavior: 'smooth' }; // Scroll to top for new navigations
+    } else if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth",
+        top: "100"
+      }
     }
-  }
+    return { top: 0, behavior: 'smooth' }; // Scroll to top for new navigations
+  },
 });
 
 export default router;

@@ -12,7 +12,7 @@
     <section class="section">
         <div class="section4">
             <h2>{{ t('HOME_SECTION4_TITLE') }}</h2>
-            <div :class="`testimonials-wrapper ${store.lang === 'ar' ? 'rtl' : ''}`">
+            <div id="feedbacks" :class="`testimonials-wrapper ${store.lang === 'ar' ? 'rtl' : ''}`">
                 <div v-for="i in 3" class="testimonial-card">
                     <div class="stars">
                         <img v-for="i in 5" :src="star"/>

@@ -1,6 +1,7 @@
 <script setup>
     import { useI18n } from "vue-i18n";
     import { store } from '@/store';
+
     const { t } = useI18n();
     const card1 = new URL('/src/assets/card1.svg', import.meta.url).href
     const card2 = new URL('/src/assets/card2.svg', import.meta.url).href
@@ -9,7 +10,7 @@
 </script>
 
 <template>
-    <section class="section">
+    <section id="ourServices" class="section">
         <div class="section3">
             <h2>{{ t('HOME_SECTION3_TITLE') }}</h2>
             <div class="section3-cards">

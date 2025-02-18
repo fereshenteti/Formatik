@@ -1,13 +1,14 @@
 <script setup>
     import { useI18n } from "vue-i18n";
+    import { store } from '@/store';
+    
     const { t } = useI18n();
     const bg = new URL('/src/assets/bg-texture.svg', import.meta.url).href
     const avatar = new URL('/src/assets/avatar.png', import.meta.url).href
-    import { store } from '@/store';
 </script>
 
 <template>
-    <section :class="`section main-section ${store.lang === 'ar' ? 'rtl' : ''}`">
+    <section id="mainSection" :class="`section main-section ${store.lang === 'ar' ? 'rtl' : ''}`">
         <div class="main-section-bg">
             <img :src="bg"/>
         </div>

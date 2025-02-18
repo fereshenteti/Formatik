@@ -18,6 +18,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            gap: 1rem;
         }
         .header-right{
             height: 100%;
@@ -57,7 +58,6 @@
     .nav-link{
         color: $secondary;
         border-radius: 30px;
-        margin: 0 0.4rem;
         &:hover{
             background-color: $bg-hover;
         }
@@ -65,7 +65,7 @@
     .header-btn{
         min-width: 100px;
         padding: 8px 1rem;
-        margin: 0 0.6rem;
+        // margin: 0 0.6rem;
         border: none;
     }
 
