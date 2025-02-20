@@ -140,6 +140,10 @@
     z-index: 200;
 }
 
+.header-nav .formatik-active-link{
+    color: $accent;
+}
+
 @media screen and (max-width: $SCREEN_LARGE) {
     .header-nav .header-wrapper{
         padding: 12px 1.6rem;
