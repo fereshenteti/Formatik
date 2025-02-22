@@ -13,7 +13,6 @@ declare module 'vue' {
     Footer: typeof import('./src/components/footer.vue')['default']
     Header: typeof import('./src/components/header.vue')['default']
     HomePage: typeof import('./src/components/home/homePage.vue')['default']
-    Intersector: typeof import('./src/components/intersector.ts')['default']
     OurOffers: typeof import('./src/components/ourOffers.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
