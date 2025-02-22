@@ -12,7 +12,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        backdrop-filter: blur(30px);
+        &.enable-filter{
+            backdrop-filter: blur(30px);
+        }
         .header-left{
             flex: 1;
             display: flex;
@@ -46,12 +48,9 @@
         // }
 
         &.rtl{
+            flex-direction: row-reverse;
             .header-left{
-                order: 0;
                 flex-direction: row-reverse;
-            }
-            .header-right{
-                order: 1;
             }
         }
     }
@@ -142,18 +141,34 @@
 
 .header-nav .formatik-active-link{
     color: $accent;
+    font-weight: bold;
 }
 
 @media screen and (max-width: $SCREEN_LARGE) {
-    .header-nav .header-wrapper{
-        padding: 12px 1.6rem;
+    .header-nav {
+        .header-wrapper{
+            &:not(.rtl){
+                .header-left {
+                    display: none !important;
+                }
+                .hamburger-btn{
+                    display: block;
+                }
+            }
+            padding: 12px 1.6rem;
+        }
     }
 }
 
 @media screen and (max-width: $SCREEN_MEDIUM) {
     .header-nav{
         .header-wrapper{
-            padding-left: 4px;
+            &:not(.rtl){
+                padding-right: 4px;
+            }
+            &.rtl{
+                padding-left: 4px;
+            }
         }
         .header-btn{
             padding: 0.8rem;

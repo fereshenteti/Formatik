@@ -46,7 +46,7 @@
             .pack{
                 flex: 1;
                 border: 1px solid $border;
-                border-radius: 25px;
+                border-radius: 45px;
                 display: flex;
                 flex-direction: column;
                 padding: 8px;
@@ -56,12 +56,12 @@
                 .pack-image{
                     flex: 1;
                     background-color: $image-placeholder;
-                    border-radius: 15px;
+                    border-radius: 45px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    min-height: 130px;
-                    max-height: 130px;
+                    min-height: 180px;
+                    max-height: 180px;
                     img{
                         width: 70%;
                     }
@@ -74,7 +74,7 @@
                 .pack-details{
                     flex: 2;
                     border: 1px solid $border;
-                    border-radius: 15px;
+                    border-radius: 45px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -162,7 +162,8 @@
                                 height: 24px;
                             }
                             :not(.included){
-                                color: $light-text;
+                                // color: $light-text;
+                                color: $light-text-2;
                             }
                         }
                     }
@@ -171,6 +172,14 @@
                     }
                 }
             }
+        }
+    }
+    &.rtl{
+        .level-selector{
+            direction: rtl;
+        }
+        .our-offers-main-section .packs-container .pack .pack-details .pack-features .pack-feature{
+            justify-content: flex-end;
         }
     }
     .sections-group{
@@ -279,6 +288,11 @@
                 .payment-method{
                     width: 170px;
                 }
+            }
+        }
+        &.rtl{
+            .dropdown-selected{
+                flex-direction: row-reverse;
             }
         }
     }

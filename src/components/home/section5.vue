@@ -1,10 +1,13 @@
-<script setup>
+<script setup lang="ts">
     import { useI18n } from "vue-i18n";
+    import { vIntersectionObserver } from '@vueuse/components';
+    import { store } from '@/store';
+    import { isIntersecting } from '@/components/intersector.ts';
+
     const { t } = useI18n();
     const plusIcon = new URL('/src/assets/plus.svg', import.meta.url).href
-    import { store } from '@/store';
 
-    const toggleCollapse = ($event) => {
+    const toggleCollapse = ($event: any) => {
         $event.stopPropagation();
         $event.srcElement?.classList?.toggle('active')
         const content = $event.srcElement?.nextElementSibling;
@@ -19,7 +22,7 @@
 </script>
 
 <template>
-    <section id="faq" class="section">
+    <section id="faq" class="section" v-intersection-observer="[isIntersecting,  { threshold: 0.2 }]">
         <div class="section5">
             <h2>{{ t('HOME_SECTION5_TITLE1') }} <span>{{ t('HOME_SECTION5_TITLE2') }}</span></h2>
 

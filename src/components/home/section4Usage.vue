@@ -1,6 +1,8 @@
-<script setup>
+<script setup lang="ts">
     import { useI18n } from "vue-i18n";
     import { store } from '@/store';
+    import { vIntersectionObserver } from '@vueuse/components';
+    import { isIntersecting } from '@/components/intersector.ts';
 
     const { t } = useI18n();
 
@@ -11,7 +13,8 @@
 </script>
 
 <template>
-    <h2 id="howToUse">{{ t('HOME_SECTION4_TITLE2_pt1') }} <span>{{ t('HOME_SECTION4_TITLE2_pt2') }}</span> {{ t('HOME_SECTION4_TITLE2_pt3') }}</h2>
+    
+    <h2>{{ t('HOME_SECTION4_TITLE2_pt1') }} <span>{{ t('HOME_SECTION4_TITLE2_pt2') }}</span> {{ t('HOME_SECTION4_TITLE2_pt3') }}</h2>
 
     <div :class="`usage-wrapper ${store.lang === 'ar' ? 'rtl' : ''}`">
         <div class="usage-card-wrapper">
@@ -72,4 +75,5 @@
     </div>
 
     <BButton pill class="accent-btn accent-btn-md">{{ t('HOME_SECTION1_BUTTON') }}</BButton>
+
 </template>

@@ -1,11 +1,13 @@
-<script setup>
+<script setup lang="ts">
     import { useI18n } from "vue-i18n";
-    const { t } = useI18n();
     import { store } from '@/store';
+    import { vIntersectionObserver } from '@vueuse/components';
+    import { isIntersecting } from '@/components/intersector.ts';
+    const { t } = useI18n();
 </script>
 
 <template>
-    <section id="whoAreWe" class="section">
+    <section id="whoAreWe" class="section" v-intersection-observer="[isIntersecting,  { threshold: 0.2 }]">
         <div :class="`section2 ${store.lang === 'ar' ? 'rtl' : ''}`">
             <div class="section2-card">
                 <h2 class="section-title">{{ t('HOME_SECTION2_CARD_TITLE') }}</h2>

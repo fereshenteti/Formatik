@@ -6,6 +6,8 @@
     min-height: 100vh;
     padding-top: $header-height;
     background-image: linear-gradient(-90deg, $primary 0%, $bg-gradient-side2 80%);
+    position: relative;
+    overflow: hidden;
     .main-section-bg{
         position: absolute;
         top: 0;
@@ -17,11 +19,16 @@
             width: 100%;
             height: 100%;
             transform: scaleX(-1);
+            object-fit: cover;
+            object-position: right;
+        }
+        &-mobile{
+            display: none;
         }
     }
     .main-section-wrapper{
         display: flex;
-        height: calc(100vh - #{$header-height});
+        min-height: calc(100vh - #{$header-height});
         .section-right{
             width: 50%;
             display: flex;
@@ -313,6 +320,11 @@
     }
 }
 
+#howToUse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .usage-wrapper{
     display: flex;
     gap: 100px;
@@ -509,6 +521,9 @@
         &.rtl{
             .collapsible{
                 flex-direction: row-reverse;
+                h4{
+                    text-align: right;
+                }
             }
             .collapsible-content{
                 p{
@@ -592,6 +607,16 @@
 @media screen and (max-width: $SCREEN_TABLET) {
     .main-section, .main-section.rtl{
         height: auto;
+        background-image: linear-gradient(-90deg, $primary 0%, $bg-gradient-side2 80%);
+        .main-section-bg {
+            height: auto;
+            &-desktop {
+                display: none;
+            }
+            &-mobile {
+                display: block;
+            }
+        }
         .main-section-wrapper{
             flex-direction: column;
             .section-left{

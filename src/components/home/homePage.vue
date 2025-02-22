@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   import Section1 from './section1.vue'
   import Section2 from './section2.vue'
   import Section3 from './section3.vue'

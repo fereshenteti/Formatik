@@ -1,6 +1,8 @@
-<script setup>
+<script setup lang="ts">
     import { useI18n } from "vue-i18n";
     import { store } from '@/store';
+    import { vIntersectionObserver } from '@vueuse/components';
+    import { isIntersecting } from '@/components/intersector.ts';
 
     const { t } = useI18n();
     const card1 = new URL('/src/assets/card1.svg', import.meta.url).href
@@ -10,7 +12,7 @@
 </script>
 
 <template>
-    <section id="ourServices" class="section">
+    <section id="ourServices" class="section" v-intersection-observer="[isIntersecting,  { threshold: 0.2 }]">
         <div class="section3">
             <h2>{{ t('HOME_SECTION3_TITLE') }}</h2>
             <div class="section3-cards">

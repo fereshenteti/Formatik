@@ -1,8 +1,8 @@
 <script setup>
-    import { ref, watch, onMounted, onUnmounted } from "vue";
+    import { ref, watch, computed } from "vue";
     import { useI18n } from "vue-i18n";
     import { ROUTE_CONSTS } from '@/router.js';
-    import customSelect from "@/components/customSelect.vue";
+    // import customSelect from "@/components/customSelect.vue";
     import { store } from '@/store';
     import { useRoute } from "vue-router";
 
@@ -13,9 +13,14 @@
     const currentHash = ref(route.hash);
 
     const selectedLang = ref(store.lang);
+    const hash = computed(() => store.hash);
     const langOptions = ref(availableLocales.map(locale => {
         return {label: locale, value: locale}
     }));
+
+    let isThrottled = false;
+    
+    let enableBlurFilter = ref(false);
 
     // State for menu toggle
     const isMenuOpen = ref(false);
@@ -33,15 +38,30 @@
         store.changeLang(selectedLang.value);
     });
 
+    watch(hash, (newHash) => {
+        currentHash.value = newHash;
+    });
+
     watch(() => route.fullPath, (newHash) => {
         currentHash.value = newHash;
     })
+
+    window.onscroll = function (e) {  
+        if (isThrottled) return; // Skip if already waiting
+
+        isThrottled = true;
+
+        setTimeout(() => {
+            enableBlurFilter.value = document.documentElement.scrollTop > 10;
+            isThrottled = false; // Allow next execution
+        }, 300);
+    }
 
 </script>
 
 <template>
     <div class="header-nav">
-        <div :class="`header-wrapper ${store.lang === 'ar' ? 'rtl' : ''}`">
+        <div :class="`header-wrapper ${store.lang === 'ar' ? 'rtl' : ''} ${enableBlurFilter ? 'enable-filter' : ''}`">
             <div class="header-right" v-on:click="isMenuOpen = false">
                 <RouterLink :to="ROUTE_CONSTS.HOME">
                     <img :src="logo" />
